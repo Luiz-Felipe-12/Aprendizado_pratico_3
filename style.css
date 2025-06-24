@@ -1,0 +1,293 @@
+/* == Root e fonte == */
+/* #region */
+@import url('https://fonts.googleapis.com/css2?family=Huninn&display=swap');
+
+:root {
+--cor_principal: #03045E;
+--cor_segundária: #0077B6;
+--cor_detalhes: #00B4D8;
+--cor_fundo_texto: #90E0EF;
+--cor_fundo_texto_2: #CAF0F8;
+--cor_fundo: #f4f0ea;
+--fonte: "Huninn", sans-serif;
+}
+/* #endregion */
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: var(--fonte);
+}
+
+body {
+    background-color: var(--cor_fundo);
+}
+
+/* == Header == */
+    /* #region */
+
+
+header{
+    background-color: var(--cor_principal);
+    color: var(--cor_fundo);
+    text-align: center;
+}
+
+h1 {
+    font-size: 1.5rem;
+    padding: 1rem;
+}
+
+header p {
+    color: var(--cor_fundo_texto_2);
+    padding-bottom: 1rem;
+}
+
+/* #endregion */
+
+/* == Main == */
+    /* #region */
+    main {
+        padding: 2rem;
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+    }
+    /* = Sections = */
+        /* #region */
+
+    section {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    main h2 {
+        color: var(--cor_principal);
+    }
+
+    main p {
+        color: rgba(0, 0, 0, 0.808);
+    }
+    /* #endregion */
+
+    /* = Imputs seletivos= */
+        /* #region  */
+
+    input[type="radio"] {
+        appearance: none;
+        width: 1rem;
+        height: 1rem;
+        border: 2px solid gray;
+        border-radius: 50%;
+        cursor: pointer;
+        background-color: white;
+        transition: border-color 0.2s ease;
+    }
+
+    input[type="radio"]:checked {
+        border-color: var(--cor_segundária);
+        background-color: var(--cor_fundo_texto_2);
+    }
+
+    input[type="checkbox"]{
+        appearance: none;
+        width: 1rem;
+        height: 1rem;
+        border-radius: 100%;
+        border: 2px solid gray;
+        cursor: pointer;
+        transition: border-color 0.2s ease;
+        background-color: white;
+    }
+
+    input[type="checkbox"]:checked {
+        border-color: var(--cor_segundária);
+        background-color: var(--cor_fundo_texto_2);
+    }
+    /* #endregion */
+
+    /* = Imputs de caixa de texto = */
+        /* #region */
+
+    input[type="text"], 
+    input[type="email"], 
+    input[type="password"], 
+    input[type="date"], 
+    select {
+        border: 3px solid var(--cor_detalhes);
+        outline: none;
+        border-radius: 5px;
+        width: 100%;
+        /* width: 100% define que queremos usar 100% da tela, respeitando o padding */
+        padding: 0.7rem;
+        background-color: white;
+        cursor: pointer;
+    }
+    input::placeholder, 
+    select {
+        color: var(--cor_principal);
+    }
+
+    /* #endregion */
+
+    /* == Tabela de pontuação == */
+        /* #region */
+
+        table {
+            align-items: center;
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            border-radius: 0.4rem;
+            overflow: hidden;
+            /* overflow: hidden serve para forçar a borda a ficar por cima da tabela */
+            background-color: transparent;
+            border: 2px solid;
+        }
+        /* = head = */
+        /* #region */
+    thead{
+        background-color: var(--cor_segundária);
+        color: white;
+        border: 2px solid black;
+    }
+    thead th {
+        color: var(--cor_fundo);
+        padding: 0.2rem;
+    }
+    /* #endregion */
+
+        /* = Body = */
+        /* #region */
+    tbody td{
+        padding: 0.1rem;
+        border: 1.5px solid black;
+        text-align: left;
+    }
+
+    /* # para ID e . para Class */
+    .nota {
+        text-align: center;
+    }
+    /* #endregion */
+
+    /* = Footer = */
+        /* #region */
+
+    tfoot {
+        background-color: var(--cor_fundo_texto_2);
+    }
+    tfoot td {
+        padding: 0.1rem;
+        text-align: center;
+        border: 2px solid black;
+        color: var(--cor_principal);
+    }
+        /* #endregion */
+
+        /* #endregion */
+
+    /* == Sumário == */
+        /* #region */ 
+    summary {
+        background-color: var(--cor_segundária);
+        padding: 1rem;
+        color: white;
+        border-radius: 5px;
+    }
+    ol {
+        padding: 1rem;
+        padding-left: 2rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.6rem;
+        background-color: var(--cor_fundo_texto_2);
+        border-radius: 5px;
+        border: 2px solid var(--cor_detalhes);
+        border-top: 0px;
+    }
+
+    ol li {
+        color: rgb(92, 91, 91);
+    }
+
+    /* #endregion */
+
+    /* == Feedback ==  */
+    /* #region */
+
+    fieldset{
+        border-radius: 5px;
+        border: 2px solid var(--cor_principal);
+        padding: 1rem;
+        background-color: var(--cor_fundo_texto_2);
+    }  
+    fieldset form {
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+        width: 100%;
+        flex-wrap: wrap;
+    }
+    fieldset legend {
+        color: var(--cor_detalhes);
+        border: 2px solid var(--cor_principal);
+        border-radius: 5px;
+        padding: 0.3rem;
+        background-color: var(--cor_fundo);
+        text-align: center;
+    }
+    .info-contato {
+        flex-grow: 1;
+        flex-shrink: 0;
+        flex-basis: 40%;
+
+    }
+
+    .info-texto {
+        flex-grow: 1;
+        flex-shrink: 1;
+        flex-basis: 1;
+    }
+
+    fieldset textarea {
+        width: 100%;
+        height: 85%;
+        padding: 0.2rem;
+    }
+
+    .info-contato input {
+        background-color: var(--cor_fundo);
+    }
+
+    .info-contato ::placeholder, 
+    .info-texto ::placeholder {
+        color: black;
+    }
+
+    .info-texto textarea {
+        background-color: var(--cor_fundo);
+    }
+
+    /* #endregion */
+
+    /* #endregion */
+
+/* == Footer == */
+/* #region */
+
+footer {
+    text-align: center;
+    background-color: var(--cor_principal);
+    color: white;
+    padding: 0.5rem;
+}
+
+footer a {
+    color: var(--cor_detalhes);
+    text-decoration: none;
+}
+
+/* #endregion */
